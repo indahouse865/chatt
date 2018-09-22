@@ -10,7 +10,15 @@
     <h1>Hello World!</h1>
     <h2> This is a chat app </h2>
 
+    <form id="msg-form">
+        <input name='message' type='text' placeholder='Text goes here'/>
+        <button>Send</button>
+    </form>
+
+    <ol id="ordered"></ol>
+
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/index.js"></script>
 </body>
 
