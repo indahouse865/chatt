@@ -10,30 +10,25 @@ socket.on("disconnect", function () {
     console.log("Disconnected from server");
 });
 
-//14:00 on jquery vid
 socket.on('newMessage', function (message) {
+    let formattedTime = moment(message.createdAt).format("h:mm:ssa");
     console.log('New Message', message);
     let li = jQuery("<li></li>");
-    li.text(`${message.from}: ${message.text}`);
+    li.text(`${message.from} ${formattedTime}: ${message.text}`);
     jQuery('#ordered').append(li);
 });
 
 socket.on('newLocationMessage', function (message) {
+    let formattedTime = moment(message.createdAt).format("h:mm:ssa");
     console.log('New Location Message', message);
     let li = jq("<li></li>");
     let a = jq("<a target='_blank'>My Current Location</a>");
-    li.text(`${message.from}: `);
+    li.text(`${message.from}: ${formattedTime} `);
     a.attr('href', message.url);
     li.append(a);
     jq('#ordered').append(li);
 });
 
-// socket.emit('createMessage', {
-//     from: 'Frank',
-//     text: 'hi!'
-// }, function(data) {
-//     console.log("got it! " + data);
-// });
 
 jQuery('#msg-form').on('submit', function (e) {
     e.preventDefault();
