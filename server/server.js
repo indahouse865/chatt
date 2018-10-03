@@ -37,11 +37,3 @@ io.on("connection", (socket) => {
 server.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
-
-
-    //     socket.broadcast.emit('newMessage', {
-    //         from: message.from,
-    //         text: message.text,
-    //         createdAt: new Date().getTime()
-    //     });
-    // });
