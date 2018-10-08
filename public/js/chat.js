@@ -19,7 +19,6 @@ function scrollToBottom () {
 
 socket.on("connect", function () {
     console.log("Connected to server");
-
 });
 
 socket.on("disconnect", function () {
@@ -46,8 +45,6 @@ socket.on('newLocationMessage', function (message) {
         url: message.url,
         createdAt: formattedTime
     });
-    console.log(message);
-    console.log(html)
     jq('#ordered').append(html);
     scrollToBottom();
 });
