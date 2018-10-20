@@ -1,11 +1,11 @@
 let moment = require('moment');
 
 let TS = moment().valueOf();
-console.log(TS)
+console.log(TS);
 
 //let createdAt = 1234;
 //var date = moment(createdAt);
-var date = moment();
+const date = moment();
 console.log(date.format('MMM Do YYYY, h:mm:ss'));
 
 console.log(date.format("MM Do YYYY h:mm a"));

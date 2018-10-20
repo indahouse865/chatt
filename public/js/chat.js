@@ -18,7 +18,16 @@ function scrollToBottom () {
 }
 
 socket.on("connect", function () {
-    console.log("Connected to server");
+    let params = jq.deparam(window.location.search);
+
+    socket.emit('join', params, function(err) {
+        if (err) {
+            alert(err);
+            window.location.href = "/";
+        } else {
+            console.log("No error");
+        }
+    });
 });
 
 socket.on("disconnect", function () {
@@ -45,7 +54,7 @@ socket.on('newLocationMessage', function (message) {
         url: message.url,
         createdAt: formattedTime
     });
-    jq('#ordered').append(html);
+    jq('#messages').append(html);
     scrollToBottom();
 });
 
