@@ -1,0 +1,8 @@
+//TODODS
+
+* case sensitivity
+* unique users
+* logins
+* prepopulated dropdown of existing rooms
+* store messages in specific rooms
+* login with users
